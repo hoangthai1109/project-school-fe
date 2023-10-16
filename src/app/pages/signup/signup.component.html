@@ -1,0 +1,94 @@
+<form class="signup-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="signup-container">
+    <h3>Sign up for free to start listening.</h3>
+    <br>
+    <hr>
+    <div class="form-group">
+      <label class="label-title label-title-required">What's your username?</label>
+      <input type="text" formControlName="username" class="form-control" placeholder="Enter your username" nz-input>
+      <div class="text-danger"
+           *ngIf="form.get('username')?.hasError('required') && (form.get('username')?.touched || form.get('username')?.dirty)">
+        The required field!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title label-title-required">What's your email?</label>
+      <input type="text" formControlName="email" class="form-control" placeholder="Enter your email" nz-input>
+      <ng-container *ngFor="let error of validateEmail.email">
+        <div class="text-danger"
+             *ngIf="form.get('email')?.hasError(error.type) && (form.get('email')?.touched || form.get('email')?.dirty)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title label-title-required">Create a password</label>
+      <nz-input-group [nzSuffix]="suffixTemplate">
+        <input
+          [type]="passwordVisible ? 'text' : 'password'"
+          placeholder="Enter your password"
+          nz-input
+          formControlName="password"
+          (input)="onInput($event.target)"
+        />
+      </nz-input-group>
+      <div style="color: red; " *ngIf="validatorPassword">
+        Password must contain at least eight characters, at lease one number and both lower and uppercase letters and special characters
+      </div>
+      <ng-template #suffixTemplate>
+      <span
+        nz-icon
+        [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+        (click)="passwordVisible = !passwordVisible"
+      ></span>
+      </ng-template>
+<!--      <input type="password" class="form-control" placeholder="Enter your password">-->
+    </div>
+
+    <div class="form-group">
+      <label class="label-title label-title-required">What should we call you?</label>
+      <input type="text" class="form-control" nz-input formControlName="fullName">
+      <p>This appears on your profile.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Date of birth</label>
+<!--      <input type="text" class="form-control">-->
+      <div class="col-sm-6">
+        <nz-date-picker [nzDisabledDate]="disabledDate" nzFormat="dd/MM/yyyy" formControlName="dateofBirth"></nz-date-picker>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Address</label>
+      <textarea rows="2" class="form-control" nz-input formControlName="address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Gender</label>
+<!--      <textarea rows="2" class="form-control" nz-input></textarea>-->
+      <div>
+        <nz-radio-group formControlName="gender">
+          <label nz-radio nzValue="M">Male</label>
+          <label nz-radio nzValue="F">Female</label>
+        </nz-radio-group>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label-title">Phone number</label>
+      <input class="form-control" nz-input formControlName="phoneNumber">
+    </div>
+  </div>
+
+  <div class="signup-footer">
+    <button class="btn btn-signup" type="submit">
+      Sign up
+    </button>
+    <div class="switch-login">
+      <span class="switch-login-warning-text">Have an account? </span> <a class="direct-login" [routerLink]="['/login']">Log in</a>.
+    </div>
+  </div>
+</form>

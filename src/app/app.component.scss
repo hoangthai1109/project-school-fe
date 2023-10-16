@@ -1,0 +1,67 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background: #ffffff;
+  margin: 16px;
+}
+
+nz-header {
+  background: black;
+  padding: 0;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  margin: 24px 0;
+  padding: 24px;
+  background: #fff;
+  min-height: 600px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.header_content {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+}
+
+.group-button {
+  height: 100%;
+  margin-right: 24px;
+}
+
+.btn-register {
+  background: black;
+  border: none;
+  color: grey;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 24px;
+}
+
+.btn-register:hover {
+  font-size: 120%;
+  color: #ffffff;
+}

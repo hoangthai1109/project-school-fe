@@ -1,0 +1,46 @@
+* {
+  overflow: hidden;
+}/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --max-height-footer: 6vh;
+  --max-width-nav: 21%;
+  --max-user-nav-width: 76%;
+  --max-height-body: 110vh;
+  --background-base: #1ed760;
+  --background-highlight: #1fdf64;
+  --background-press: #169c46;
+  --background-elevated-base: #1ed760;
+  --background-elevated-highlight: #1ed760;
+  --background-elevated-press: #1ed760;
+  --background-tinted-base: #1ed760;
+  --background-tinted-highlight: #1ed760;
+  --background-tinted-press: #1ed760;
+  --background-unsafe-for-small-text-base: #1ed760;
+  --background-unsafe-for-small-text-highlight: #1ed760;
+  --background-unsafe-for-small-text-press: #1ed760;
+  --text-base: #000;
+  --text-subdued: #000;
+  --text-bright-accent: #000;
+  --text-negative: #000;
+  --text-warning: #000;
+  --text-positive: #000;
+  --text-announcement: #000;
+  --essential-base: #000;
+  --essential-subdued: #000;
+  --essential-bright-accent: #000;
+  --essential-negative: #000;
+  --essential-warning: #000;
+  --essential-positive: #000;
+  --essential-announcement: #000;
+  --decorative-base: #000;
+  --decorative-subdued: #1abc54;
+}
+
+body {
+  background-color: black!important;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+}

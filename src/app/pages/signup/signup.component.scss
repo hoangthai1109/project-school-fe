@@ -1,0 +1,85 @@
+.signup-form {
+  background: white;
+  width: 100%;
+  height: calc(var(--max-height-body) - 10vh);
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.signup-container {
+  margin: 24px 50vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+i {
+  cursor: pointer;
+}
+
+::ng-deep .ant-input-affix-wrapper {
+  border-radius: 8px;
+  min-height: 3vh;
+}
+
+.label-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.label-title-required {
+
+}
+
+.label-title-required:before {
+  content: '*';
+  color: red;
+}
+
+.signup-footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-signup {
+  background: #1bd760;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 40px;
+  height: 10vh;
+  width: 20vh;
+}
+
+.btn-signup:hover {
+  background: var(--background-highlight);
+  color: #000000;
+  font-size: 130%;
+  font-weight: 700;
+  border-radius: 40px;
+  height: 10vh;
+  width: 20vh;
+}
+
+.switch-login {
+  margin-top: 24px;
+  margin-left: 2.5rem;
+}
+
+.switch-login-warning-text {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.direct-login {
+  text-decoration: underline;
+  color: var(--background-base);
+  font-weight: 700;
+  font-size: 15px;
+}

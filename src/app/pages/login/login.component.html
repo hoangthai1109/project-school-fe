@@ -1,0 +1,40 @@
+<form class="signup-form" [formGroup]="form" (ngSubmit)="onLogin()">
+  <div class="signup-container">
+    <h3>Sign in to discovery your playlist</h3>
+    <br>
+    <hr>
+    <div class="form-group">
+      <label class="label-title label-title-required">Username</label>
+      <input type="text" nz-input class="form-control" formControlName="userName" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label class="label-title label-title-required">Password</label>
+      <nz-input-group [nzSuffix]="suffixTemplate">
+        <input
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          placeholder="Enter your password"
+          formControlName="password"
+        />
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+      <span
+        nz-icon
+        [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+        (click)="passwordVisible = !passwordVisible"
+      ></span>
+      </ng-template>
+      <!--      <input type="password" class="form-control" placeholder="Enter your password">-->
+    </div>
+  </div>
+
+  <div class="signup-footer">
+    <button class="btn btn-signup" type="submit">
+      Sign in
+    </button>
+    <div class="switch-login">
+      <span class="switch-login-warning-text">Dont have account? Sign up </span> <a class="direct-login" [routerLink]="['/register']" >here</a>.
+    </div>
+  </div>
+</form>
